@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gregstewart/weatherly/issues"
   },
-  "homepage": "https://github.com/gregstewart/weatherly"
+  "homepage": "https://github.com/gregstewart/weatherly",
+  "dependencies": {
+    "connect": "^2.19.6"
+  }
 }
