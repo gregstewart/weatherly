@@ -1,0 +1,19 @@
+{
+  "name": "weatherly",
+  "version": "0.0.0",
+  "description": "Building a web app guided by tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gregstewart/weatherly.git"
+  },
+  "author": "Greg Stewart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gregstewart/weatherly/issues"
+  },
+  "homepage": "https://github.com/gregstewart/weatherly"
+}
