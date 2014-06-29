@@ -14,6 +14,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('e2e', [
     'selenium_start',
-    'selenium_stop'
+    'express:test',
+    'selenium_stop',
+    'express:test:stop'
   ]);
 };
