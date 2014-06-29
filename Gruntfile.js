@@ -1,7 +1,15 @@
 module.exports = function(grunt) {
-  grunt.initConfig({});
+  grunt.initConfig({
+    express: {
+      test: {
+        options: {
+          script: './server.js'
+        }
+      }
+    }
+  });
 
-  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-selenium-webdriver');
 
   grunt.registerTask('e2e', [
