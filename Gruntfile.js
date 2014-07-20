@@ -59,4 +59,6 @@ module.exports = function (grunt) {
     grunt.registerTask('unit', [
         'karma:unit'
     ]);
+
+    grunt.registerTask('heroku:production', 'build');
 };
