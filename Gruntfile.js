@@ -8,9 +8,9 @@ module.exports = function(grunt) {
       }
     },
     cucumberjs: {
-      src: 'functional-tests/features/',
+      src: 'tests/e2e/features/',
       options: {
-        steps: 'functional-tests/steps/'
+        steps: 'tests/e2e/steps/'
       }
     }
   });
