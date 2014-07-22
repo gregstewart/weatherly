@@ -28,7 +28,7 @@ module.exports = function (grunt) {
             fonts: {
                 expand: true,
                 src: ['bower_components/bootstrap/fonts/*'],
-                dest: 'app/css/bootstrap/',
+                dest: 'app/fonts/',
                 filter: 'isFile',
                 flatten: true
             }
