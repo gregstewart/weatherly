@@ -19,7 +19,7 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files: {
-                    'app/css/main.css': 'src/scss/main.scss'
+                    'app/css/main.css': 'src/less/main.less'
                 }
             }
         },
