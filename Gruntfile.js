@@ -33,6 +33,14 @@ module.exports = function (grunt) {
                 flatten: true
             }
         },
+        bower: {
+            install: {
+                options: {
+                    cleanTargetDir:false,
+                    targetDir: './bower_components'
+                }
+            }
+        },
         karma: {
             unit: {
                 configFile: 'karma.conf.js'
@@ -45,9 +53,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-cucumber');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('build', ['less:production', 'copy:fonts']);
+    grunt.registerTask('generate', ['less:production', 'copy:fonts']);
+    grunt.registerTask('build', ['bower:install', 'generate']);
 
     grunt.registerTask('e2e', [
         'selenium_start',
@@ -61,5 +71,5 @@ module.exports = function (grunt) {
         'karma:unit'
     ]);
 
-    grunt.registerTask('heroku:production', ['less:production']);
+    grunt.registerTask('heroku:production', 'build');
 };
