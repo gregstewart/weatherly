@@ -13,21 +13,22 @@ module.exports = function (grunt) {
                 steps: 'tests/e2e/steps/'
             }
         },
-        sass: {
-            dist: {
+        less: {
+            production: {
                 options: {
-                    sourceMap: true
+                    paths: ['app/css/'],
+                    cleancss: true
                 },
                 files: {
-                    'app/css/main.css': 'src/scss/main.scss'
+                    'app/css/main.css': 'src/less/main.less'
                 }
             }
         },
         copy: {
             fonts: {
                 expand: true,
-                src: ['bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*'],
-                dest: 'app/css/bootstrap/',
+                src: ['bower_components/bootstrap/fonts/*'],
+                dest: 'app/fonts/',
                 filter: 'isFile',
                 flatten: true
             }
@@ -42,11 +43,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-selenium-webdriver');
     grunt.loadNpmTasks('grunt-cucumber');
-    grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('build', ['sass', 'copy:fonts']);
+    grunt.registerTask('build', ['less:production', 'copy:fonts']);
 
     grunt.registerTask('e2e', [
         'selenium_start',
@@ -60,4 +61,5 @@ module.exports = function (grunt) {
         'karma:unit'
     ]);
 
+    grunt.registerTask('heroku:production', ['less:production']);
 };
