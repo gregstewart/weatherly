@@ -60,5 +60,5 @@ module.exports = function (grunt) {
         'karma:unit'
     ]);
 
-    grunt.registerTask('heroku:production', ['sass:dist']);
+    grunt.registerTask('heroku:production', ['sass']);
 };
