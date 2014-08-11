@@ -41,6 +41,16 @@ module.exports = function (grunt) {
                 }
             }
         },
+        browserify: {
+            dist: {
+                files: {
+                    'app/js/main.min.js': ['src/js/**/*.js']
+                }
+            },
+            options: {
+                transform: ['uglifyify']
+            }
+        },
         karma: {
             unit: {
                 configFile: 'karma.conf.js'
@@ -53,10 +63,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-cucumber');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('generate', ['less:production', 'copy:fonts']);
+    grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify']);
     grunt.registerTask('build', ['bower:install', 'generate']);
 
     grunt.registerTask('e2e', [
