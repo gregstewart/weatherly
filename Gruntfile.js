@@ -69,6 +69,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify']);
     grunt.registerTask('build', ['bower:install', 'generate']);
+    grunt.registerTask('unit', ['browserify', 'karma:unit']);
 
     grunt.registerTask('e2e', [
         'selenium_start',
@@ -78,9 +79,7 @@ module.exports = function (grunt) {
         'express:test:stop'
     ]);
 
-    grunt.registerTask('unit', [
-        'karma:unit'
-    ]);
+    grunt.registerTask('test', ['generate', 'karma:unit', 'e2e']);
 
     grunt.registerTask('heroku:production', 'build');
 };
