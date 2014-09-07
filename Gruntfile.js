@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+ module.exports = function (grunt) {
     grunt.initConfig({
         express: {
             test: {
@@ -42,13 +42,16 @@ module.exports = function (grunt) {
             }
         },
         browserify: {
-            dist: {
-                files: {
-                    'app/js/main.min.js': ['src/js/**/*.js']
+            code: {
+                dest: 'app/js/main.min.js',
+                src: 'node_modules/weatherly/js/**/*.js',
+                options: {
+                    transform: ['uglifyify']
                 }
             },
-            options: {
-                transform: ['uglifyify']
+            test: {
+                dest: 'app/js/test.js',
+                src: 'tests/unit/**/*.js'
             }
         },
         karma: {
@@ -67,9 +70,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify']);
+    grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify:code']);
     grunt.registerTask('build', ['bower:install', 'generate']);
-    grunt.registerTask('unit', ['browserify', 'karma:unit']);
+    grunt.registerTask('unit', ['browserify:code', 'browserify:test', 'karma:unit']);
 
     grunt.registerTask('e2e', [
         'selenium_start',
@@ -79,7 +82,7 @@ module.exports = function (grunt) {
         'express:test:stop'
     ]);
 
-    grunt.registerTask('test', ['build', 'karma:unit', 'e2e']);
+    grunt.registerTask('test', ['build', 'browserify:test', 'karma:unit', 'e2e']);
 
     grunt.registerTask('heroku:production', 'build');
 };

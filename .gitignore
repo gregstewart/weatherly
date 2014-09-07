@@ -1,7 +1,8 @@
-node_modules
 .idea
 bower_components
 phantomjsdriver.log
 app/css/
 app/fonts/
 app/js/
+node_modules/*
+!node_modules/weatherly
