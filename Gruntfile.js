@@ -79,7 +79,7 @@ module.exports = function (grunt) {
         'express:test:stop'
     ]);
 
-    grunt.registerTask('test', ['generate', 'karma:unit', 'e2e']);
+    grunt.registerTask('test', ['build', 'karma:unit', 'e2e']);
 
     grunt.registerTask('heroku:production', 'build');
 };
