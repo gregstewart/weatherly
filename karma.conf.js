@@ -10,12 +10,13 @@
 
             // frameworks to use
             // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-            frameworks: ['jasmine'],
+            frameworks: ['jasmine', 'commonjs'],
 
 
             // list of files / patterns to load in the browser
             files: [
-                'app/js/test.js'
+                'node_modules/weatherly/js/**/*.js',
+                'tests/unit/**/*.js'
             ],
 
 
@@ -27,6 +28,8 @@
             // preprocess matching files before serving them to the browser
             // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
             preprocessors: {
+                'node_modules/weatherly/js/**/*.js': ['commonjs'],
+                'tests/unit/**/*.js': ['commonjs']
             },
 
 
@@ -60,6 +63,6 @@
 
             // Continuous Integration mode
             // if true, Karma captures browsers, runs the tests and exits
-            singleRun: false
+            singleRun: true
         });
     };

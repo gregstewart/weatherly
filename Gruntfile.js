@@ -56,13 +56,8 @@
         },
         karma: {
             unit: {
-                configFile: 'karma.conf.js',
-                background: true
+                configFile: 'karma.conf.js'
             }
-        },
-        watch: {
-            files: ['node_modules/weatherly/js/**/*.js', 'tests/unit/**/*.js'],
-            tasks: [ 'browserify:code', 'browserify:test', 'karma:unit:run']
         }
     });
 
@@ -74,11 +69,10 @@
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify:code']);
     grunt.registerTask('build', ['bower:install', 'generate']);
-    grunt.registerTask('unit', ['browserify:code', 'browserify:test', 'karma:unit', 'watch']);
+    grunt.registerTask('unit', ['karma:unit']);
 
     grunt.registerTask('e2e', [
         'selenium_start',
@@ -88,7 +82,7 @@
         'express:test:stop'
     ]);
 
-    grunt.registerTask('test', ['build', 'browserify:test', 'karma:unit', 'e2e']);
+    grunt.registerTask('test', ['build', 'karma:unit', 'e2e']);
 
     grunt.registerTask('heroku:production', 'build');
 };
