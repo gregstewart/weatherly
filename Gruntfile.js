@@ -55,8 +55,13 @@
             }
         },
         karma: {
-            unit: {
+            dev: {
                 configFile: 'karma.conf.js'
+            },
+            ci: {
+                configFile: 'karma.conf.js',
+                singleRun: true,
+                autoWatch: false
             }
         }
     });
@@ -72,7 +77,6 @@
 
     grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify:code']);
     grunt.registerTask('build', ['bower:install', 'generate']);
-    grunt.registerTask('unit', ['karma:unit']);
 
     grunt.registerTask('e2e', [
         'selenium_start',
@@ -82,7 +86,7 @@
         'express:test:stop'
     ]);
 
-    grunt.registerTask('test', ['build', 'karma:unit', 'e2e']);
+    grunt.registerTask('test', ['build', 'karma:ci', 'e2e']);
 
     grunt.registerTask('heroku:production', 'build');
 };
