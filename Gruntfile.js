@@ -61,7 +61,8 @@
             ci: {
                 configFile: 'karma.conf.js',
                 singleRun: true,
-                autoWatch: false
+                autoWatch: false,
+                reporters: ['progress']
             }
         }
     });

@@ -41,6 +41,7 @@
     "grunt-selenium-webdriver": "^0.2.420",
     "karma": "^0.12.17",
     "karma-commonjs": "0.0.11",
+    "karma-coverage": "^0.2.6",
     "karma-jasmine": "^0.1.5",
     "karma-phantomjs-launcher": "^0.1.4",
     "webdriverjs": "^1.7.1"
