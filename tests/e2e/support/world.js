@@ -16,7 +16,9 @@ client.init();
 
 var World = function World(callback) {
   this.browser = client;
-
+  
+  this.port = process.env.PORT;
+  
   this.visit = function(url, callback) {
     this.browser.url(url, callback);
   };
