@@ -44,7 +44,7 @@
         browserify: {
             code: {
                 dest: 'app/js/main.min.js',
-                src: 'node_modules/weatherly/js/**/*.js',
+                src:  ['node_modules/weatherly/js/**/*.js'],
                 options: {
                     transform: ['uglifyify']
                 }
