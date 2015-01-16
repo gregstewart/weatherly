@@ -12,17 +12,6 @@ module.exports = function (grunt) {
             options: {
                 steps: 'tests/e2e/steps/'
             }
-        },
-        less: {
-            production: {
-                options: {
-                    paths: ['app/css/'],
-                    cleancss: true
-                },
-                files: {
-                    'app/css/main.css': 'src/less/main.less'
-                }
-            }
         }
     });
     
@@ -31,9 +20,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-selenium-webdriver');
     grunt.loadNpmTasks('grunt-cucumber');
-    grunt.loadNpmTasks('grunt-contrib-less');
     
-
     grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify:code']);
     grunt.registerTask('build', ['bower:install', 'generate']);
 
