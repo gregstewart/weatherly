@@ -1,0 +1,32 @@
+{
+    "strict": true,
+    "unused": true,
+    "undef": true,
+    "camelcase": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "indent": 4,
+    "newcap": true,
+    "trailing": true,
+    "maxdepth": 2,
+    "browser": true,
+    "devel": true,
+    "node": true,
+    "quotmark": true,
+    
+    "globals": {
+        "sinon": false,
+        "define": false,
+        "beforeEach": false,
+        "afterEach": false,
+        "expect": false,
+        "describe": false,
+        "it": false,
+        "xdescribe": false,
+        "ddescribe": false,
+        "xit": false,
+        "iit": false,
+        "jasmine": false
+    }
+}
