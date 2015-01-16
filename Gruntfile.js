@@ -1,19 +1,6 @@
 module.exports = function (grunt) {
-    grunt.initConfig({
-        express: {
-            test: {
-                options: {
-                    script: './server.js'
-                }
-            }
-        }
-    });
-    
     grunt.loadTasks('build');
 
-    grunt.loadNpmTasks('grunt-express-server');
-    
-    
     grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify:code']);
     grunt.registerTask('build', ['bower:install', 'generate']);
 
@@ -26,6 +13,5 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('test', ['build', 'karma:ci', 'e2e']);
-
     grunt.registerTask('heroku:production', 'build');
 };
