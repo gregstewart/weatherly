@@ -6,20 +6,13 @@ module.exports = function (grunt) {
                     script: './server.js'
                 }
             }
-        },
-        cucumberjs: {
-            src: 'tests/e2e/features/',
-            options: {
-                steps: 'tests/e2e/steps/'
-            }
         }
     });
     
     grunt.loadTasks('build');
 
     grunt.loadNpmTasks('grunt-express-server');
-    grunt.loadNpmTasks('grunt-selenium-webdriver');
-    grunt.loadNpmTasks('grunt-cucumber');
+    
     
     grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify:code']);
     grunt.registerTask('build', ['bower:install', 'generate']);
