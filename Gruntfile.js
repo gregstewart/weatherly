@@ -53,19 +53,10 @@
                 dest: 'app/js/test.js',
                 src: 'tests/unit/**/*.js'
             }
-        },
-        karma: {
-            dev: {
-                configFile: 'karma.conf.js'
-            },
-            ci: {
-                configFile: 'karma.conf.js',
-                singleRun: true,
-                autoWatch: false,
-                reporters: ['progress']
-            }
         }
     });
+    
+    grunt.loadTasks('build');
 
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-selenium-webdriver');
@@ -74,7 +65,7 @@
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-bower-task');
-    grunt.loadNpmTasks('grunt-karma');
+    
 
     grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify:code']);
     grunt.registerTask('build', ['bower:install', 'generate']);
