@@ -11,6 +11,6 @@
         grunt.loadNpmTasks('grunt-selenium-webdriver');
         grunt.loadNpmTasks('grunt-cucumber');
 
-        grunt.config('cucumber', config);
+        grunt.config('cucumberjs', config);
     }
 })(module);
