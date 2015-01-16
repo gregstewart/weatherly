@@ -23,15 +23,6 @@ module.exports = function (grunt) {
                     'app/css/main.css': 'src/less/main.less'
                 }
             }
-        },
-        copy: {
-            fonts: {
-                expand: true,
-                src: ['bower_components/bootstrap/fonts/*'],
-                dest: 'app/fonts/',
-                filter: 'isFile',
-                flatten: true
-            }
         }
     });
     
@@ -41,7 +32,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-selenium-webdriver');
     grunt.loadNpmTasks('grunt-cucumber');
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-copy');
     
 
     grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify:code']);
