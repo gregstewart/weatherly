@@ -32,14 +32,6 @@ module.exports = function (grunt) {
                 filter: 'isFile',
                 flatten: true
             }
-        },
-        bower: {
-            install: {
-                options: {
-                    cleanTargetDir:false,
-                    targetDir: './bower_components'
-                }
-            }
         }
     });
     
@@ -50,7 +42,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-cucumber');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-bower-task');
     
 
     grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify:code']);
