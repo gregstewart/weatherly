@@ -1,4 +1,4 @@
- module.exports = function (grunt) {
+module.exports = function (grunt) {
     grunt.initConfig({
         express: {
             test: {
@@ -40,19 +40,6 @@
                     targetDir: './bower_components'
                 }
             }
-        },
-        browserify: {
-            code: {
-                dest: 'app/js/main.min.js',
-                src: 'node_modules/weatherly/js/**/*.js',
-                options: {
-                    transform: ['uglifyify']
-                }
-            },
-            test: {
-                dest: 'app/js/test.js',
-                src: 'tests/unit/**/*.js'
-            }
         }
     });
     
@@ -63,7 +50,6 @@
     grunt.loadNpmTasks('grunt-cucumber');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-bower-task');
     
 
