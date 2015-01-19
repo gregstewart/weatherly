@@ -1,5 +1,7 @@
 var UsingWeatherlyStepDefinitions = function () {
-    this.World = require("../support/world.js").World;
+    'use strict';
+
+    this.World = require('../support/world.js').World;
     
     this.Given(/^I am on the home page$/, function (callback) {
       this.visit('http://localhost:' + this.port + '/', callback);

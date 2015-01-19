@@ -1,4 +1,6 @@
 module.exports = function (grunt) {
+    'use strict';
+
     grunt.loadTasks('build');
 
     grunt.registerTask('generate', ['less:production', 'copy:fonts', 'browserify:code']);
