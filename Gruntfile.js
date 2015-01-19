@@ -14,6 +14,6 @@ module.exports = function (grunt) {
         'express:test:stop'
     ]);
 
-    grunt.registerTask('test', ['build', 'karma:ci', 'e2e']);
+    grunt.registerTask('test', ['jshint', 'build', 'karma:ci', 'e2e']);
     grunt.registerTask('heroku:production', 'build');
 };
