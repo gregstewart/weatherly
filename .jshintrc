@@ -27,6 +27,7 @@
         "ddescribe": false,
         "xit": false,
         "iit": false,
-        "jasmine": false
+        "jasmine": false,
+        "Backbone": false
     }
 }
