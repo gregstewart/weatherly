@@ -9,16 +9,15 @@
                 './Gruntfile.js',
                 './build/grunt/**/*.js',
                 './node_modules/weatherly/**/*.js',
-                './tests/unit/**/*.js',
-                './tests/e2e/**/*.js',
-                './js/**/*.js',
+                './tests/**/*.js',
+                './js/**/*.js'
             ]
-        },
+        }
     };
-    
+
     module.exports = function (grunt) {
         grunt.loadNpmTasks('grunt-contrib-jshint');
-        
+
         grunt.config('jshint', config);
     }
 })(module);

@@ -13,7 +13,7 @@
             src: 'tests/unit/**/*.js'
         }
     };
-    
+
     module.exports = function(grunt) {
         grunt.loadNpmTasks('grunt-browserify');
 

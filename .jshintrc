@@ -14,7 +14,7 @@
     "devel": true,
     "node": true,
     "quotmark": true,
-    
+
     "globals": {
         "sinon": false,
         "define": false,
