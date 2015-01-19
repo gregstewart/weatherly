@@ -1,5 +1,5 @@
 'use strict';
-
+/* exported TodaysWeather */
 var TodaysWeather = require('weatherly/js/model/TodaysWeather');
 
 describe('Today \'s weather', function () {
