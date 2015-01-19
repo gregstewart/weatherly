@@ -12,5 +12,5 @@
         grunt.loadNpmTasks('grunt-express-server');
 
         grunt.config('express', config);
-    }
+    };
 })(module);

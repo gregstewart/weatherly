@@ -16,5 +16,5 @@
         grunt.loadNpmTasks('grunt-karma');
 
         grunt.config('karma', config);
-    }
+    };
 })(module);

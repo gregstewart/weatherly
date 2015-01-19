@@ -12,5 +12,5 @@
         grunt.loadNpmTasks('grunt-cucumber');
 
         grunt.config('cucumberjs', config);
-    }
+    };
 })(module);

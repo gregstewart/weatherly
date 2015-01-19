@@ -14,5 +14,5 @@
         grunt.loadNpmTasks('grunt-contrib-copy');
 
         grunt.config('copy', config);
-    }
+    };
 })(module);

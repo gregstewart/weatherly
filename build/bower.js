@@ -13,5 +13,5 @@
         grunt.loadNpmTasks('grunt-bower-task');
 
         grunt.config('bower', config);
-    }
+    };
 })(module);

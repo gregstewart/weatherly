@@ -18,5 +18,5 @@
         grunt.loadNpmTasks('grunt-browserify');
 
         grunt.config('browserify', config);
-    }
+    };
 })(module);

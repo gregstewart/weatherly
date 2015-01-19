@@ -16,5 +16,5 @@
         grunt.loadNpmTasks('grunt-contrib-less');
 
         grunt.config('less', config);
-    }
+    };
 })(module);
