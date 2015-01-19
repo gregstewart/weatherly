@@ -139,7 +139,7 @@ describe('Today \'s weather', function () {
                 expect(todaysWeather.get('apparentTemperature')).toBe(changeExpected);
             });
 
-            it('does not convert the temperature value if we are in the US', function () {
+            it('does not convert the temperature value if we are in the "US"', function () {
                 var todaysWeather = new TodaysWeather({ location: 'Boston',
                         country: 'US',
                         temperature: this.temperature,
@@ -152,7 +152,7 @@ describe('Today \'s weather', function () {
             });
         });
 
-        xdescribe('Location changes', function () {
+        describe('Location changes', function () {
             it('should convert if we were in a Fahrenheit country but are now in the "UK"', function () {
                 var expected = (this.temperature - 32) * (5/9),
                     todaysWeather = new TodaysWeather({ location: 'Boston',
@@ -162,7 +162,7 @@ describe('Today \'s weather', function () {
 
                 expect(todaysWeather.get('temperature')).toBe(this.temperature);
 
-                todaysWeather.set('location', 'UK');
+                todaysWeather.set('country', 'UK');
                 expect(todaysWeather.get('temperature')).toBe(expected);
             });
 
@@ -176,7 +176,7 @@ describe('Today \'s weather', function () {
 
                 expect(todaysWeather.get('temperature')).toBe(expected);
 
-                todaysWeather.set('location', 'US');
+                todaysWeather.set('country', 'US');
                 expect(todaysWeather.get('temperature')).toBe(originalTemperature);
             });
         });
