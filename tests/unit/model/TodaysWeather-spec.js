@@ -9,17 +9,20 @@ describe('Today \'s weather', function () {
         this.country = 'US';
         this.temperature = 47.39;
         this.apparentTemperature = 41.78;
+        this.currentWeatherConditions = 'Clear';
     });
 
     it('stores the values passed in', function () {
         var todaysWeather = new TodaysWeather({ location: this.location,
             country: this.country,
             temperature: this.temperature,
-            apparentTemperature: this.apparentTemperature});
+            apparentTemperature: this.apparentTemperature,
+            currentWeatherConditions: this.currentWeatherConditions});
 
         expect(todaysWeather.get('location')).toBe(this.location);
         expect(todaysWeather.get('temperature')).toBe(this.temperature);
         expect(todaysWeather.get('apparentTemperature')).toBe(this.apparentTemperature);
+        expect(todaysWeather.get('currentWeatherConditions')).toBe(this.currentWeatherConditions);
     });
 
     describe('Temperature conversion', function () {
