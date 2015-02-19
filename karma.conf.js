@@ -10,7 +10,7 @@ module.exports = function (config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jasmine', 'commonjs'],
+        frameworks: ['jasmine', 'browserify'],
 
 
         // list of files / patterns to load in the browser
@@ -30,8 +30,8 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'node_modules/weatherly/js/**/*.js': ['commonjs', 'coverage'],
-            'tests/unit/**/*.js': ['commonjs'],
+            'node_modules/weatherly/js/**/*.js': ['browserify', 'coverage'],
+            'tests/unit/**/*.js': ['browserify'],
         },
 
 
