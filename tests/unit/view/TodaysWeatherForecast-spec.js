@@ -1,13 +1,13 @@
 'use strict';
 
-var TodaysWeatherView = require('weatherly/js/view/TodaysWeather');
+var TodaysWeatherForecastView = require('weatherly/js/view/TodaysWeatherForecast.js');
 
 describe('Today \'s weather view', function () {
     var view;
 
     beforeEach(function () {
         var model = new Backbone.Model({location: 'London', temperature: '14', currentWeatherConditions: 'Clear', apparentTemperature: '14'});
-        view = new TodaysWeatherView({model: model});
+        view = new TodaysWeatherForecastView({model: model});
         view.render();
     });
 
