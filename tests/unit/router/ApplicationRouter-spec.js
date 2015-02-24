@@ -20,7 +20,7 @@ describe('Application Router', function () {
 
         it('sets up a model and a view when triggered', function () {
             var view = setUpView();
-            viewBuilder.setView(view);
+            viewBuilder._setView(view);
 
             this.router.index();
 
